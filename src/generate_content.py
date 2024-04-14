@@ -35,7 +35,7 @@ def generate_page(from_path, template_path, final_path):
 def recursive_generate_pages(dir_path_content, template_path, final_dir_path):
     for filename in os.listdir(dir_path_content):
         from_path = os.path.join(dir_path_content, filename)
-        final_path = os.path(final_dir_path, filename)
+        final_path = os.path.join(final_dir_path, filename)
         if os.path.isfile(from_path):
             final_path = Path(final_path).with_suffix(".html")
             generate_page(from_path, template_path, final_path)
